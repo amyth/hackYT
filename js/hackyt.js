@@ -1,11 +1,11 @@
 
 (function() {
     window.hackyt.init = function() {
-        var lastNum = -1;
-        var videoNum = 0;
-        var videoUrls = [];
+        window.hackyt.lastNum = -1;
+        window.hackyt.videoNum = 0;
+        window.hackyt.videoUrls = [];
 
-        while (videoNum != lastNum) {
+        while (window.hackyt.videoNum != window.hackyt.lastNum) {
             var x = window.hackyt.clickMoreButton();
             console.log(x);
         }
@@ -24,7 +24,7 @@
     };
 
     window.hackyt.clickMoreButton = function() {
-        lastNum = videoNum;
+        window.hackyt.lastNum = window.hackyt.videoNum;
         var loadMB = document.getElementsByClassName('load-more-button');
         if (loadMB.length > 0) {
             loadMB = loadMB[0];
@@ -33,7 +33,7 @@
         }
 
         loadMB.dispatchEvent(window.hackyt.clickEvent);
-        videoNum = window.hackyt.getVidNums();
+        window.hackyt.videoNum = window.hackyt.getVidNums();
 
         return videoNum;
     }
