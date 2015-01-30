@@ -8,4 +8,5 @@
     // insertion. If the script is already
     // been inserted to the DOM, this method
     // should be called explicitly
+    window.hackyt.init();
 })();
